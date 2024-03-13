@@ -1,0 +1,39 @@
+2) Dado a sequência de Fibonacci, onde se inicia por 0 e 1 e o próximo valor sempre será a soma dos 2 valores anteriores (exemplo: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...), escreva um programa na linguagem que desejar onde, informado um número, ele calcule a sequência de Fibonacci e retorne uma mensagem avisando se o número informado pertence ou não a sequência.
+
+IMPORTANTE:
+
+Esse número pode ser informado através de qualquer entrada de sua preferência ou pode ser previamente definido no código
+
+
+
+MEU CÓDIGO:
+
+
+
+
+def verifica_fibonacci(numero):
+    # Inicializando os dois primeiros números da sequência de Fibonacci
+    fib1, fib2 = 0, 1
+    
+    # Enquanto o próximo número na sequência for menor ou igual ao número informado
+    while fib2 <= numero:
+        # Se o número informado for igual a um número na sequência de Fibonacci, retornar True
+        if fib2 == numero:
+            return True
+        # Atualizando os números na sequência de Fibonacci
+        fib1, fib2 = fib2, fib1 + fib2
+    
+    # Se o número não for encontrado na sequência de Fibonacci, retornar False
+    return False
+
+# Função principal para solicitar entrada do usuário e verificar se o número pertence à sequência de Fibonacci
+def main():
+    numero = int(input("Informe um número para verificar se pertence à sequência de Fibonacci: "))
+    if verifica_fibonacci(numero):
+        print(f"O número {numero} pertence à sequência de Fibonacci.")
+    else:
+        print(f"O número {numero} NÃO pertence à sequência de Fibonacci.")
+
+if __name__ == "__main__":
+    main()
+
